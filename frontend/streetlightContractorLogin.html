@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contractor Login - Streetlights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/streetlightContractorLogin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Streetlight Contractor Login</h2>
+
+      <form onsubmit="goToStreetlightContractorDashboard(event)">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" required />
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" required />
+        </div>
+
+        <div class="form-group">
+          <label>Contractor ID</label>
+          <input type="text" id="id" required />
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" minlength="5" placeholder="Minimum 5 characters" required />
+        </div>
+
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input
+            type="tel"
+            id="mobile"
+            placeholder="Enter 10-digit number"
+            required
+          />
+          <button type="button" onclick="sendOTP()">Send OTP</button>
+        </div>
+
+        <div class="form-group otp-section" id="otpBox">
+          <label>Enter OTP</label>
+          <input type="text" id="otpInput" placeholder="6-digit OTP" />
+          <button type="button" onclick="verifyOTP()">Verify OTP</button>
+        </div>
+
+        <button type="submit" id="loginBtn" disabled>Login</button>
+      </form>
+    </div>
+    <script src="./js/streetlightContractorLogin.js"></script>
+  </body>
+</html>

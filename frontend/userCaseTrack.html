@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Case Tracking Application</title>
+    <link rel="stylesheet" href="./css/userCaseTrack.css" />
+  </head>
+  <body>
+    <header>User Case Tracking Application</header>
+    <div class="container">
+      <h2>Track Your Case</h2>
+      <form id="trackForm">
+        <input
+          type="text"
+          id="trackCaseId"
+          placeholder="Enter Case ID"
+          required
+        />
+        <button type="submit">Track Case</button>
+      </form>
+      <div id="caseStatus"></div>
+
+      <h2>User Panel (View & Update Cases)</h2>
+      <div class="table-wrapper">
+        <table id="casesTable">
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Date</th>
+              <th>Subject</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./js/userCaseTrack.js"></script>
+  </body>
+</html>

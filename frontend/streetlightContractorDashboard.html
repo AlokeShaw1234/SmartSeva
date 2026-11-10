@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streetlight Contractor Dashboard</title>
+    <link rel="stylesheet" href="./css/streetlightContractorDashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>Streetlight Contractor Dashboard</header>
+
+    <div class="dashboard">
+      <div class="card" data-section="complaintsSection">
+        <h3>Complaints</h3>
+        <div class="count" id="complaintsCount">0</div>
+      </div>
+
+      <div class="card" data-section="assignedSection">
+        <h3>Assigned</h3>
+        <div class="count" id="assignedCount">0</div>
+      </div>
+
+      <div class="card" data-section="completedSection">
+        <h3>Completed</h3>
+        <div class="count" id="completedCount">0</div>
+      </div>
+    </div>
+
+    <!-- COMPLAINTS -->
+     
+    <section id="complaintsSection" class="active">
+      <h2>Streetlight Complaints</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Media</th>
+            <th>Deadline</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="complaintsTable">
+          <tr>
+            <td>S101</td>
+            <td>Streetlight Not Working</td>
+            <td>Light off in entire street</td>
+            <td>Kolkata</td>
+            <td><a href="#">View</a></td>
+            <td>1 day</td>
+            <td><button class="btn-contract">Take Contract</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ASSIGNED -->
+
+    <section id="assignedSection">
+      <h2>Assigned Streetlight Contracts</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Media</th>
+            <th>Deadline</th>
+            <th>Upload</th>
+          </tr>
+        </thead>
+
+        <tbody id="assignedTable"></tbody>
+      </table>
+    </section>
+
+    <!-- COMPLETED -->
+
+    <section id="completedSection">
+      <h2>Completed Streetlight Contracts</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Media</th>
+            <th>Deadline</th>
+            <th>Proof</th>
+          </tr>
+        </thead>
+
+        <tbody id="completedTable"></tbody>
+      </table>
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal-overlay" id="modal">
+      <div class="modal">
+        <h3>Take Contract?</h3>
+        <button class="btn-confirm" id="yesBtn">Yes</button>
+        <button class="btn-cancel" id="noBtn">No</button>
+      </div>
+    </div>
+    <script src="./js/streetlightContractorDashboard.js"></script>
+  </body>
+</html>

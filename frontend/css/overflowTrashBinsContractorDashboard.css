@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fdf6f0;
+  color: #333;
+}
+
+/* HEADER */
+
+header {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* DASHBOARD CARDS */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border-left: 5px solid #ff7a18;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.count {
+  font-size: 2rem;
+  color: #ff7a18;
+  font-weight: bold;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 20px 30px;
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+/* TABLE */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f4f4f4;
+}
+
+/* BUTTONS */
+
+.btn-contract {
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-contract:hover {
+  transform: scale(1.05);
+}
+
+.btn-upload {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.btn-confirm {
+  background: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.btn-cancel {
+  background: red;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  margin: 5px;
+  border-radius: 6px;
+}

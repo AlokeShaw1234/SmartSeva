@@ -1,0 +1,131 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login Form</title>
+    <link rel="stylesheet" href="./css/userLogin.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>User Login</h2>
+
+      <form id="form">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" required />
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" required />
+
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" required />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter registered email"
+          required
+        />
+
+        <label for="mobile">Mobile Number</label>
+        <input
+          type="tel"
+          id="mobile"
+          placeholder="Enter 10-digit number"
+          maxlength="10"
+          pattern="[0-9]{10}"
+          required
+        />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Minimum 5 characters"
+          minlength="5"
+          required
+        />
+
+        <button type="button" onclick="sendOTP()">Send OTP</button>
+
+        <div class="otp-section" id="otpSection">
+          <label for="otpInput">Enter OTP</label>
+          <input
+            type="text"
+            id="otpInput"
+            placeholder="Enter OTP"
+            maxlength="4"
+            inputmode="numeric"
+          />
+
+          <button type="button" onclick="verifyOTP()">Verify OTP</button>
+        </div>
+
+        <button type="submit" id="loginButton">Login</button>
+
+        <div id="message"></div>
+      </form>
+    </div>
+
+    <script src="./js/userLogin.js"></script>
+  </body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Form</title>
+    <link rel="stylesheet" href="./css/userLogin.css">
+</head>
+<body>
+    <div class="container">
+        <h2>User Details</h2>
+
+        <form id="form">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required>
+
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input
+                type="tel"
+                id="mobile"
+                placeholder="Enter 10-digit mobile number"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                minlength="5"
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit" id="submitButton">Submit</button>
+
+            <p id="message"></p>
+        </form>
+    </div>
+
+    <script src="./js/userLogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Municipal Corporation</title>
+    <link rel="stylesheet" href="./css/contactUs.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- LEFT -->
+      <div class="left">
+        <h2>Contact Municipal Corporation</h2>
+
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            Municipal Corporation Office<br />
+            Kolkata, India
+          </div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <div>+91 98765 43210</div>
+        </div>
+
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <div>support@municipalcorp.gov.in</div>
+        </div>
+
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-square"></i></a>
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-youtube-square"></i></a>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <h2>Send Us a Message</h2>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+
+          <div class="form-group">
+            <input type="email" placeholder="Your Email ID" required />
+          </div>
+
+          <div class="form-group">
+            <input type="text" placeholder="Subject" required />
+          </div>
+
+          <div class="form-group">
+            <textarea placeholder="Type your message" required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+
+          <div class="success" id="successMsg">
+            Your message has been sent successfully!
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div style="text-align: center">
+      <a href="index.html" class="back-home">← Back To Home</a>
+    </div>
+    <script src="./js/contactUs.js"></script>
+  </body>
+</html>

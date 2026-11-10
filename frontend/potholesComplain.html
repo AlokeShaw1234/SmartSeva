@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Complaint for Potholes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/potholesComplain.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Complaint for Potholes</h1>
+
+      <div id="msg" class="message"></div>
+
+      <form id="pftForm">
+
+        <!-- Category -->
+        <div class="form-group">
+          <label>Complaint Category:</label>
+          <input type="text" value="POTHOLES" readonly />
+          <input
+            type="hidden"
+            id="category"
+            name="category"
+            value="POTHOLES"
+          />
+        </div>
+
+        <!-- Voice Language -->
+        <div class="form-group">
+          <label for="voiceLang">🎤 Voice Language:</label>
+          <select id="voiceLang" name="voiceLang">
+            <option value="en-IN">English</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="bn-IN">Bengali</option>
+          </select>
+        </div>
+
+        <!-- Subject -->
+        <div class="form-group">
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+          />
+          <span
+            class="mic-icon"
+            onclick="startVoiceInput('subject')"
+          >🎤</span>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            required
+          ></textarea>
+          <span
+            class="mic-icon"
+            onclick="startVoiceInput('description')"
+          >🎤</span>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+          <label for="mobile">Mobile Number:</label>
+          <div style="display: flex; gap: 10px">
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="10-digit number"
+              inputmode="numeric"
+              maxlength="10"
+              required
+            />
+            <button type="button" onclick="getOtp()">Get OTP</button>
+          </div>
+        </div>
+
+        <!-- OTP -->
+        <div class="form-group" id="otpGroup" style="display: none">
+          <label for="otp">Enter OTP:</label>
+          <input
+            type="text"
+            id="otp"
+            inputmode="numeric"
+            maxlength="6"
+          />
+          <button type="button" onclick="verifyOtp()">
+            Verify OTP
+          </button>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            readonly
+            required
+          />
+        </div>
+
+        <!-- Upload Photo/Video -->
+        <div class="form-group">
+          <label for="media">Upload Photo/Video:</label>
+          <input
+            type="file"
+            id="media"
+            name="media"
+            accept="image/*,video/*"
+          />
+          <div id="preview" class="preview"></div>
+        </div>
+
+        <button type="submit" class="submit-btn" disabled>
+          Submit Complaint
+        </button>
+
+      </form>
+    </div>
+
+    <script src="./js/potholesComplain.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/adminLogin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Admin Login</h2>
+
+      <form id="loginForm" onsubmit="goToAdminDashboard(event)">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="firstName" placeholder=" " required />
+          <label>First Name</label>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="lastName" placeholder=" " required />
+          <label>Last Name</label>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-phone"></i>
+          <input type="tel" id="mobile" placeholder=" " required />
+          <label>Mobile Number</label>
+        </div>
+
+        <button type="button" id="otpBtn">Generate OTP</button>
+
+        <div class="input-group">
+          <i class="fas fa-key"></i>
+          <input type="text" id="otpInput" placeholder=" " required />
+          <label>Enter OTP</label>
+        </div>
+
+        <div class="captcha-box">
+          <canvas id="captchaCanvas" width="120" height="40"></canvas>
+          <i class="fas fa-sync-alt refresh" onclick="generateCaptcha()"></i>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-shield-alt"></i>
+          <input type="text" id="captchaInput" placeholder=" " required />
+          <label>Enter Captcha</label>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p id="successMsg"></p>
+      </form>
+    </div>
+    <script src="./js/adminLogin.js"></script>
+  </body>
+</html>

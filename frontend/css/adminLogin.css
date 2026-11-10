@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 40px 0;
+}
+
+.container {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUT GROUP */
+
+.input-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 12px 14px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* FIX SELECT VISIBILITY */
+
+.input-group select {
+  background: rgba(0, 0, 0, 0.6);
+}
+.input-group select option {
+  background: #1c1c1c;
+  color: white;
+}
+
+/* PLACEHOLDER  */
+
+.input-group input::placeholder {
+  color: transparent;
+}
+
+/* LABEL */
+
+.input-group label {
+  position: absolute;
+  left: 40px;
+  top: 14px;
+  color: #aaa;
+  font-size: 14px;
+  transition: 0.25s ease;
+  pointer-events: none;
+}
+
+/* FLOAT LABEL */
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group select:focus ~ label,
+.input-group select:valid ~ label {
+  top: -8px;
+  left: 35px;
+  font-size: 11px;
+  color: #00e6e6;
+  background: #0f2027;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+/* ICON */
+
+.input-group i {
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  color: #aaa;
+}
+
+/* FOCUS EFFECT */
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #00e6e6;
+  box-shadow: 0 0 8px rgba(0, 230, 230, 0.4);
+}
+
+/* BUTTON */
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  background: #00c6ff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0072ff;
+}
+
+/* CAPTCHA */
+
+.captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+canvas {
+  border-radius: 6px;
+  background: #fff;
+}
+
+.refresh {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* SUCCESS message */
+
+#successMsg {
+  text-align: center;
+  margin-top: 10px;
+  color: lightgreen;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complaint for Tree Fall</title>
+
+    <link rel="stylesheet" href="./css/treefallComplain.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Complaint for Tree Fall</h1>
+
+        <div id="msg" class="message"></div>
+
+        <form id="pftForm" enctype="multipart/form-data">
+
+            <!-- Complaint Category -->
+            <div class="form-group">
+                <label for="category">Complaint Category:</label>
+
+                <input type="text" value="TREE FALL" readonly>
+
+                <input
+                    type="hidden"
+                    id="category"
+                    name="category"
+                    value="TREE FALL"
+                >
+            </div>
+
+            <!-- Voice Language -->
+            <div class="form-group">
+                <label for="voiceLang">🎤 Voice Language:</label>
+
+                <select id="voiceLang">
+                    <option value="en-IN">English</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="bn-IN">Bengali</option>
+                </select>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter complaint subject"
+                    required
+                >
+
+                <span
+                    class="mic-icon"
+                    onclick="startVoiceInput('subject')"
+                    title="Voice input"
+                >🎤</span>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Describe the tree fall problem"
+                    required
+                ></textarea>
+
+                <span
+                    class="mic-icon"
+                    onclick="startVoiceInput('description')"
+                    title="Voice input"
+                >🎤</span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+
+                <div style="display: flex; gap: 10px;">
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="10-digit number"
+                        maxlength="10"
+                        inputmode="numeric"
+                        required
+                    >
+
+                    <button type="button" onclick="getOtp()">
+                        Get OTP
+                    </button>
+                </div>
+            </div>
+
+            <!-- OTP Verification -->
+            <div
+                class="form-group"
+                id="otpGroup"
+                style="display: none;"
+            >
+                <label for="otp">Enter OTP:</label>
+
+                <input
+                    type="text"
+                    id="otp"
+                    placeholder="Enter OTP"
+                    inputmode="numeric"
+                    maxlength="6"
+                >
+
+                <button type="button" onclick="verifyOtp()">
+                    Verify OTP
+                </button>
+            </div>
+
+            <!-- Location -->
+            <div class="form-group">
+                <label for="location">Location:</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Fetching location..."
+                    readonly
+                    required
+                >
+
+                <button type="button" onclick="getLocation()">
+                    Get Location
+                </button>
+            </div>
+
+            <!-- Upload Photo or Video -->
+            <div class="form-group">
+                <label for="media">Upload Photo/Video:</label>
+
+                <input
+                    type="file"
+                    id="media"
+                    name="media"
+                    accept="image/*,video/*"
+                >
+
+                <div id="preview" class="preview"></div>
+            </div>
+
+            <!-- Submit Complaint -->
+            <button
+                type="submit"
+                class="submit-btn"
+                disabled
+            >
+                Submit Complaint
+            </button>
+
+        </form>
+    </div>
+
+    <script src="./js/treefallComplain.js"></script>
+
+</body>
+
+</html>

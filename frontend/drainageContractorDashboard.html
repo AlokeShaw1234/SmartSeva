@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drainage Contractor Dashboard</title>
+    <link rel="stylesheet" href="./css/drainageContractorDashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>Drainage Contractor Dashboard</header>
+
+    <div class="dashboard">
+      <div class="card" data-section="complaintsSection">
+        <h3>Complaints</h3>
+        <div class="count" id="complaintsCount">0</div>
+      </div>
+
+      <div class="card" data-section="assignedSection">
+        <h3>Assigned</h3>
+        <div class="count" id="assignedCount">0</div>
+      </div>
+
+      <div class="card" data-section="completedSection">
+        <h3>Completed</h3>
+        <div class="count" id="completedCount">0</div>
+      </div>
+    </div>
+
+    <!-- COMPLAINTS -->
+     
+    <section id="complaintsSection" class="active">
+      <h2>Drainage Complaints</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Media</th>
+            <th>Deadline</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="complaintsTable">
+          <tr>
+            <td>D101</td>
+            <td>Drain Blockage</td>
+            <td>Water not flowing properly</td>
+            <td>Kolkata</td>
+            <td><a href="#">View</a></td>
+            <td>2 days</td>
+            <td><button class="btn-contract">Take Contract</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ASSIGNED -->
+
+    <section id="assignedSection">
+      <h2>Assigned Drainage Contracts</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Media</th>
+            <th>Deadline</th>
+            <th>Upload</th>
+          </tr>
+        </thead>
+
+        <tbody id="assignedTable"></tbody>
+      </table>
+    </section>
+
+    <!-- COMPLETED -->
+
+    <section id="completedSection">
+      <h2>Completed Drainage Contracts</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Case ID</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Media</th>
+            <th>Deadline</th>
+            <th>Proof</th>
+          </tr>
+        </thead>
+
+        <tbody id="completedTable"></tbody>
+      </table>
+    </section>
+
+    <!-- MODAL -->
+
+    <div class="modal-overlay" id="modal">
+      <div class="modal">
+        <h3>Take Contract?</h3>
+        <button class="btn-confirm" id="yesBtn">Yes</button>
+        <button class="btn-cancel" id="noBtn">No</button>
+      </div>
+    </div>
+    <script src="./js/drainageContractorDashboard.js"></script>
+  </body>
+</html>

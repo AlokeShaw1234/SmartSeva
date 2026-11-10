@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Complaint Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/waterComplain.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Submit a Complaint</h1>
+      <div id="msg" class="message"></div>
+      <form
+        id="pftForm"
+        method="POST"
+        action="/submitComplaint"
+        enctype="multipart/form-data"
+      >
+        <!-- Category -->
+        <div class="form-group">
+          <label for="category-display">Complaint Category:</label>
+          <input
+            type="text"
+            id="category-display"
+            value="WATER SUPPLY"
+            readonly
+            required
+          />
+          <input
+            type="hidden"
+            id="category"
+            name="category"
+            value="WATER SUPPLY"
+          />
+        </div>
+
+        <!-- Language Selection -->
+         
+        <div class="form-group">
+          <label for="voiceLang">🎤 Select Voice Input Language:</label>
+          <select id="voiceLang">
+            <option value="en-IN">English</option>
+            <option value="hi-IN">हिन्दी</option>
+            <option value="te-IN">తెలుగు (Telugu)</option>
+            <option value="ta-IN">தமிழ் (Tamil)</option>
+            <option value="mr-IN">मराठी</option>
+            <option value="bn-IN">বাংলা (Bengali)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="subject">Complaint Subject:</label>
+          <input type="text" id="subject" name="subject" required />
+          <span class="mic-icon" onclick="startVoiceInput('subject')">🎤</span>
+        </div>
+
+        <!-- Description -->
+
+        <div class="form-group">
+          <label for="description">Complaint Description:</label>
+          <textarea id="description" name="description" required></textarea>
+          <span class="mic-icon" onclick="startVoiceInput('description')"
+            >🎤</span
+          >
+        </div>
+
+        <!-- Mobile Number -->
+
+        <div class="form-group">
+          <label for="mobile">Mobile Number:</label>
+          <div style="display: flex; gap: 10px">
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              placeholder="Enter 10-digit mobile number"
+              pattern="[0-9]{10}"
+              required
+              style="flex-grow: 1"
+            />
+            <button
+              type="button"
+              id="getOtpBtn"
+              onclick="getOtp()"
+              style="
+                padding: 12px 20px;
+                border: none;
+                border-radius: 10px;
+                background: #ff9800;
+                color: #fff;
+                cursor: pointer;
+              "
+            >
+              Get OTP
+            </button>
+          </div>
+        </div>
+
+        <!-- OTP -->
+
+        <div class="form-group" id="otpGroup" style="display: none">
+          <label for="otp">Enter OTP:</label>
+          <div style="display: flex; gap: 10px">
+            <input
+              type="text"
+              id="otp"
+              name="otp"
+              placeholder="Enter 6-digit OTP"
+              required
+              style="flex-grow: 1"
+            />
+            <button
+              type="button"
+              id="verifyOtpBtn"
+              onclick="verifyOtp()"
+              style="
+                padding: 12px 20px;
+                border: none;
+                border-radius: 10px;
+                background: #4caf50;
+                color: #fff;
+                cursor: pointer;
+              "
+            >
+              Verify OTP
+            </button>
+          </div>
+        </div>
+
+        <!-- Location -->
+
+        <div class="form-group">
+          <label for="location">Your Location (Latitude, Longitude):</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Fetching location..."
+            readonly
+            required
+          />
+          <div id="gpsInfo">📍 Fetching location...</div>
+        </div>
+
+        <!-- Media -->
+
+        <div class="form-group">
+          <label>Upload Photo or Video:</label>
+          <input
+            type="file"
+            id="media"
+            name="media"
+            accept="image/*,video/*"
+            style="display: none"
+          />
+          <button
+            type="button"
+            class="upload-btn"
+            onclick="document.getElementById('media').click()"
+          >
+            📷🎥 Capture & Upload
+          </button>
+          <div class="preview" id="preview"></div>
+        </div>
+
+        <button type="submit" class="submit-btn" disabled>
+          Submit Complaint
+        </button>
+      </form>
+    </div>
+    <script src="./js/waterComplain.js"></script>
+  </body>
+</html>
