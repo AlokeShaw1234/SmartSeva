@@ -1,9 +1,9 @@
 let generatedOtp = null;
 let isOtpVerified = false;
 
-// ------------------------------
-// GET OTP
-// ------------------------------
+
+//                    GET OTP
+
 function getOtp() {
     const mobile = document.getElementById("mobile").value.trim();
     const msg = document.getElementById("msg");
@@ -23,13 +23,13 @@ function getOtp() {
 
     msg.innerHTML = "";
 
-    // Demo OTP only; no SMS is sent.
+    // Demo OTP only
+
     alert("Your demo OTP is: " + generatedOtp);
 }
 
-// ------------------------------
-// VERIFY OTP
-// ------------------------------
+//                VERIFY OTP 
+
 function verifyOtp() {
     const enteredOtp = document.getElementById("otp").value.trim();
     const msg = document.getElementById("msg");
@@ -52,9 +52,9 @@ function verifyOtp() {
     }
 }
 
-// ------------------------------
-// RESET OTP WHEN MOBILE CHANGES
-// ------------------------------
+//                  RESET OTP WHEN MOBILE CHANGES
+
+
 document.getElementById("mobile").addEventListener("input", function () {
     generatedOtp = null;
     isOtpVerified = false;
@@ -68,7 +68,7 @@ document.getElementById("mobile").addEventListener("input", function () {
 
 // ------------------------------
 // VOICE INPUT
-// ------------------------------
+
 function startVoiceInput(id) {
     const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -223,7 +223,7 @@ document.getElementById("pftForm").addEventListener(
 
             // Send complaint to the backend route.
             const response = await fetch(
-                "http://localhost:3000/submitComplaint",
+                "https://smartseva-5dia.onrender.com/submitComplaint",
                 {
                     method: "POST",
                     body: formData

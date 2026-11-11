@@ -1,18 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #0f4c81;          
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px 15px;
 }
 
 .container {
   background: #ffffff;
   padding: 25px 30px;
   border-radius: 10px;
-  width: 350px;
+  width: 100%;
+  max-width: 380px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px;
+  }
 }
 
 h2 {

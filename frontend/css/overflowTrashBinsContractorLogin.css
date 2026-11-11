@@ -74,3 +74,12 @@ button:hover {
 .otp-section {
   display: none;
 }
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+  }
+  .container {
+    padding: 20px 16px;
+  }
+}

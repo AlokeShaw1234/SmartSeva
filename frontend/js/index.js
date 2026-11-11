@@ -2,9 +2,16 @@
 
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
-menuToggle.addEventListener("click", () => {
-  menu.classList.toggle("active");
-});
+if (menuToggle && menu) {
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+  });
+}
 
 //                            Features fade-in
 
@@ -67,7 +74,7 @@ if (nextBtn && horizSlider) {
 
 async function updateStats() {
   try {
-    const res = await fetch("http://localhost:3000/api/complaints");
+    const res = await fetch("https://smartseva-5dia.onrender.com/api/complaints");
     if (!res.ok) return;
     const complaints = await res.json();
     

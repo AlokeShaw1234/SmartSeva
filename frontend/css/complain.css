@@ -148,3 +148,38 @@ h1 {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 25px 15px 90px;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 380px;
+  }
+
+  .card {
+    padding: 20px 15px;
+    border-radius: 14px;
+  }
+
+  .card img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 12px;
+  }
+
+  .back-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}

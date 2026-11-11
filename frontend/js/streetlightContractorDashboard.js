@@ -1,5 +1,5 @@
 const CATEGORY = "BROKEN STREETLIGHTS";
-const API_URL = "http://localhost:3000";
+const API_URL = "https://smartseva-5dia.onrender.com";
 
 const complaintsTable = document.getElementById("complaintsTable");
 const assignedTable = document.getElementById("assignedTable");
@@ -59,9 +59,11 @@ async function fetchComplaints() {
         : '<span style="color:#888;">No Media</span>';
 
       // Deadline formatted
+
       let deadlineStr = c.deadline ? new Date(c.deadline).toLocaleDateString() : 'Not Set';
 
       // Section 1: Pending (assigned by admin, waiting for contractor to take)
+
       if (c.contractor_status === 'Pending') {
         pendingCount++;
         if (complaintsTable) {
@@ -81,7 +83,9 @@ async function fetchComplaints() {
           `;
         }
       } 
+
       // Section 2: Accepted (contractor accepted, waiting for proof of work)
+
       else if (c.contractor_status === 'Accepted' && !c.contractor_proof_url) {
         assignedCount++;
         if (assignedTable) {
@@ -101,7 +105,9 @@ async function fetchComplaints() {
           `;
         }
       } 
+      
       // Section 3: Completed (proof uploaded or status is Resolved)
+
       else if (c.contractor_proof_url || c.contractor_status === 'Completed' || c.status === 'Resolved') {
         completedCount++;
         let proofLink = c.contractor_proof_url 

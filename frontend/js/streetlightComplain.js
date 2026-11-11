@@ -112,6 +112,7 @@ function getLocation() {
 getLocation();
 
 // Preview uploaded image or video
+
 document.getElementById("media").addEventListener("change", function (event) {
   let file = event.target.files[0];
   let preview = document.getElementById("preview");
@@ -144,6 +145,7 @@ document.getElementById("media").addEventListener("change", function (event) {
 });
 
 // Submit complaint
+
 document.getElementById("pftForm").addEventListener(
   "submit",
   async function (event) {
@@ -178,7 +180,7 @@ document.getElementById("pftForm").addEventListener(
 
       // Use the route defined in your Express backend.
       const response = await fetch(
-        "http://localhost:3000/submitComplaint",
+        "https://smartseva-5dia.onrender.com/submitComplaint",
         {
           method: "POST",
           body: formData

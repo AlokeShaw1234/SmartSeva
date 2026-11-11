@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://smartseva-5dia.onrender.com/api";
 
 document.getElementById("trackForm").addEventListener("submit", async (e) => {
   e.preventDefault();

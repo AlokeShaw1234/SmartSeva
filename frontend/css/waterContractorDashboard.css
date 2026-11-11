@@ -58,6 +58,9 @@ header {
 section {
   padding: 20px 30px;
   display: none;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 section.active {
   display: block;
@@ -67,10 +70,10 @@ section.active {
 
 table {
   width: 100%;
+  min-width: 650px;
   border-collapse: collapse;
   background: #fff;
   border-radius: 10px;
-  overflow: hidden;
 }
 
 th,
@@ -81,6 +84,7 @@ td {
 
 th {
   background: #caf0f8;
+  white-space: nowrap;
 }
 
 /* BUTTONS */

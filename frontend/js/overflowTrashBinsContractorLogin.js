@@ -38,7 +38,7 @@ async function goToOverflowTrashBinsContractorDashboard(event) {
   }
 
   try {
-    const res = await fetch("http://localhost:3000/contractor/login", {
+    const res = await fetch("https://smartseva-5dia.onrender.com/contractor/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

@@ -1,5 +1,5 @@
 const CATEGORY = "OVERFLOW TRASH BINS";
-const API_URL = "http://localhost:3000";
+const API_URL = "https://smartseva-5dia.onrender.com";
 
 const complaintsTable = document.getElementById("complaintsTable");
 const assignedTable = document.getElementById("assignedTable");

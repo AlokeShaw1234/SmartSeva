@@ -10,15 +10,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 30px 15px;
 }
 
 .container {
-  width: 380px;
+  width: 100%;
+  max-width: 400px;
   background: #1e1e2f;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px;
+  }
 }
 
 h2 {

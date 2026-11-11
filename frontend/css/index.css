@@ -134,20 +134,35 @@ nav {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  nav {
+    padding: 12px 20px;
+  }
+
   .menu {
     position: absolute;
-    top: 60px;
+    top: 64px;
     left: -100%;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(15px);
     width: 100%;
-    padding: 20px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    padding: 20px 25px;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     transition: left 0.3s ease;
   }
 
   .menu.active {
     left: 0;
+  }
+
+  .menu a {
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .menu-toggle {
@@ -652,4 +667,72 @@ section p {
 .bot-message {
   background: #f1f1f1;
   align-self: flex-start;
+}
+
+/* Global Responsive Improvements for index */
+@media (max-width: 768px) {
+  #features .container {
+    padding: 30px 16px;
+    border-radius: 16px;
+  }
+
+  #features h1,
+  #solutions h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  #features .map-preview {
+    height: 240px;
+    margin-top: 30px;
+    border-radius: 15px;
+  }
+
+  #solutions .solutions-grid {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  #solutions .solution-card {
+    padding: 25px 20px;
+  }
+
+  #imageSlider {
+    padding-top: 40px;
+  }
+
+  #imageSlider .slider {
+    width: 250px;
+    height: 250px;
+  }
+
+  #imageSlider .carousel img {
+    width: 230px;
+    height: 150px;
+    left: 10px;
+    top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 80px 15px 40px;
+  }
+
+  section h1 {
+    font-size: 1.8rem;
+  }
+
+  #features ul,
+  #solutions .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #features li {
+    padding: 20px 15px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
 }

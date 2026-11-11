@@ -178,7 +178,7 @@ document.getElementById("pftForm").addEventListener(
         try {
             // Change 3000 if your backend uses a different port.
             const response = await fetch(
-                "http://localhost:3000/submitComplaint",
+                "https://smartseva-5dia.onrender.com/submitComplaint",
                 {
                     method: "POST",
                     body: formData

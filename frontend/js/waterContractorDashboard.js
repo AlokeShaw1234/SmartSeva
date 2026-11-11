@@ -1,5 +1,5 @@
 const CATEGORY = "WATER SUPPLY";
-const API_URL = "http://localhost:3000";
+const API_URL = "https://smartseva-5dia.onrender.com";
 
 const complaintsTable = document.getElementById("complaintsTable");
 const assignedTable = document.getElementById("assignedTable");
@@ -101,7 +101,9 @@ async function fetchComplaints() {
           `;
         }
       } 
+
       // Section 3: Completed (proof uploaded or status is Resolved)
+      
       else if (c.contractor_proof_url || c.contractor_status === 'Completed' || c.status === 'Resolved') {
         completedCount++;
         let proofLink = c.contractor_proof_url 

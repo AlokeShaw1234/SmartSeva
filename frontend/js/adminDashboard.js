@@ -5,7 +5,9 @@ let map;
 let mapMarkers = [];
 
 document.addEventListener("DOMContentLoaded", () => {
+
   // Initialize map centered roughly on Kolkata / regional coordinates
+
   map = L.map('map').setView([22.5726, 88.3639], 11);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchComplaints() {
   try {
-    const res = await fetch("http://localhost:3000/api/complaints");
+    const res = await fetch("https://smartseva-5dia.onrender.com/api/complaints");
     const data = await res.json();
     allComplaints = Array.isArray(data) ? data : [];
     renderTable();
@@ -29,7 +31,7 @@ async function fetchComplaints() {
 
 async function fetchContractors() {
   try {
-    const res = await fetch("http://localhost:3000/api/contractors");
+    const res = await fetch("https://smartseva-5dia.onrender.com/api/contractors");
     const data = await res.json();
     allContractors = Array.isArray(data) ? data : [];
   } catch(err) {
@@ -65,14 +67,14 @@ function renderTable() {
     // Media preview
     let mediaUrl = c.media_url || c.image_path;
     let mediaHtml = mediaUrl
-      ? `<a href="http://localhost:3000${mediaUrl}" target="_blank">
-           <img src="http://localhost:3000${mediaUrl}" alt="Media" style="width:70px; height:50px; object-fit:cover; border-radius:4px; border:1px solid #ddd;">
+      ? `<a href="https://smartseva-5dia.onrender.com${mediaUrl}" target="_blank">
+           <img src="https://smartseva-5dia.onrender.com${mediaUrl}" alt="Media" style="width:70px; height:50px; object-fit:cover; border-radius:4px; border:1px solid #ddd;">
          </a>`
       : '<span style="color:#888;">No Media</span>';
     
     // Contractor Proof
     let proofHtml = c.contractor_proof_url
-      ? `<a href="http://localhost:3000${c.contractor_proof_url}" target="_blank" style="color:#28a745; font-weight:bold;">View Proof</a>`
+      ? `<a href="https://smartseva-5dia.onrender.com${c.contractor_proof_url}" target="_blank" style="color:#28a745; font-weight:bold;">View Proof</a>`
       : '<span style="color:#888;">No Proof</span>';
     
     // Assign Button
@@ -197,7 +199,7 @@ async function submitAssign() {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/api/complaints/assign/${caseId}`, {
+    const res = await fetch(`https://smartseva-5dia.onrender.com/api/complaints/assign/${caseId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -223,7 +225,7 @@ async function submitAssign() {
 
 async function updateMainStatus(caseId, status) {
   try {
-    const res = await fetch(`http://localhost:3000/api/complaints/${caseId}/status`, {
+    const res = await fetch(`https://smartseva-5dia.onrender.com/api/complaints/${caseId}/status`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: status })
